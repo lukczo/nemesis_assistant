@@ -1,0 +1,17 @@
+{
+  "name": "nemesis_assistant",
+  "version": "1.0.0",
+  "description": "An app to assist you while you play Nemesis and Nemesis Lockdown boardgame",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.40.0",
+    "eslint-config-react-app": "^7.0.1",
+    "vite-plugin-eslint": "^1.8.1"
+  }
+}
