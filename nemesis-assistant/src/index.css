@@ -1,69 +1,164 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+/* Cool sci-fi font like from Aliens */
+@font-face {
+  font-family: 'Eurostile';
+  src: url('/src/assets/fonts/eurostile.TTF') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-body {
+/* Remove margin and padding */
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* Remove default list styles */
+ol,
+ul {
+  list-style: none;
+}
+
+/* Reset the default hyperlink style */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Remove table border-collapse */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Reset input and button style */
+button,
+input,
+optgroup,
+select,
+textarea {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+  line-height: 1;
+}
+
+/* Remove button default padding and border */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  cursor: pointer;
+}
+
+/* Reset image border */
+img {
+  border-style: none;
+}
+
+/* Remove default form element outline */
+:focus {
+  outline: none;
+}
+
+/* Remove user agent stylesheet */
+body {
+  font-family: 'Eurostile', Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-size: var(--font-size-m);
+  background-color: var(--background-color);
+  color: var(--space-blue);
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: var(--font-size-xl);
+}
+h2 {
+  font-size: var(--font-size-l);
+}
+p {
+  font-size: var(--font-size-m);
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
+:root {
+  --mars-red: #FF5733;
+  --space-blue: #0A7FD9;
+  --xenomorph-black: #000000;
+  --alien-green: #00FF00;
+  --futuristic-silver: #C0C0C0;
+  --background-color: #242424;
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+  --font-size-xl: 1.75rem;
+  --font-size-l: 1.5rem;
+  --font-size-m: 1.25rem;
+  --font-size-s: 1rem;
 }
