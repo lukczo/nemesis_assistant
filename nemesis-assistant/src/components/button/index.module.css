@@ -1,0 +1,18 @@
+.button {
+    background-color: transparent;
+    color: var(--space-blue); 
+    border: 2px solid var(--space-blue);
+    border-radius: 4px; 
+    padding: 5px;
+    font-size: var(--font-size-xs); 
+    font-weight: 500;
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* On hover, change the background color and add a box-shadow */
+  .button:hover {
+    background-color: rgba(122, 122, 122, 0.2);
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+  }

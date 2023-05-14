@@ -137,13 +137,15 @@ body {
   font-size: var(--font-size-m);
   background-color: var(--background-color);
   color: var(--space-blue);
+  height: calc(100vh - 50px);
+  width: 100vw;
+  margin: 0 auto;
+  padding: 1rem;
+  overflow: hidden;
 }
 
-body {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+body > #root {
+  height: 100%;
 }
 
 h1 {
@@ -168,4 +170,6 @@ p {
   --font-size-l: 1.5rem;
   --font-size-m: 1.25rem;
   --font-size-s: 1rem;
+  --font-size-xs: 0.75rem
+
 }

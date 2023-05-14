@@ -1,7 +1,8 @@
 import App from "../app/App.tsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { TestPage } from "../pages/test/index.tsx";
-import { HomePage } from "../pages/home/index.tsx";
+import { TestPage } from "../pages/test/";
+import { HomePage } from "../pages/home/";
+import { PlayPage } from "../pages/play/";
 
 const router = createBrowserRouter([
   {
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
       {
         path: "test",
         element: <TestPage />,
+      },
+      {
+        path: "play",
+        element: <PlayPage />,
       },
     ],
   },
