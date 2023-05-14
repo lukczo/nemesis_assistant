@@ -4,18 +4,17 @@ import en from "./english.json";
 import pl from "./polish.json";
 
 const resources = {
-  en: {
+  english: {
     translation: en,
   },
-  pl: {
+  polish: {
     translation: pl,
   },
 };
 
 i18n.use(initReactI18next).init({
   resources,
-  fallbackLng: "en",
-  lng: "pl",
+  fallbackLng: "english",
 });
 
 export default i18n;
