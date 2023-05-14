@@ -10,7 +10,7 @@ export default defineConfig({
       registerType: "autoUpdate",
       manifest: {
         name: "Nemesis Assistant",
-        short_name: "NA",
+        short_name: "Nemesis Assistant",
         icons: [
           {
             src: "alien.ico",
