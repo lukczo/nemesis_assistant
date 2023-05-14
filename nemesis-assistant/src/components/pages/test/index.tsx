@@ -1,3 +1,7 @@
+import { useTranslation } from "react-i18next";
+
 export const TestPage = () => {
-  return <>This is a test page</>;
+  const { t } = useTranslation();
+
+  return <div>{t("test_page")}</div>;
 };
