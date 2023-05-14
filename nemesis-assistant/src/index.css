@@ -1,7 +1,7 @@
 /* Cool sci-fi font like from Aliens */
 @font-face {
   font-family: 'Eurostile';
-  src: url('/src/assets/fonts/eurostile.TTF') format('woff');
+  src: url('/src/assets/fonts/eurostile.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -137,6 +137,13 @@ body {
   font-size: var(--font-size-m);
   background-color: var(--background-color);
   color: var(--space-blue);
+}
+
+body {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
 }
 
 h1 {
