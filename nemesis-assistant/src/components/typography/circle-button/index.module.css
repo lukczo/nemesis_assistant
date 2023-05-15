@@ -1,0 +1,36 @@
+.circle {
+    display: inline-block;
+    background-color: transparent;
+    color: white;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    text-shadow: 0 0 5px var(--mars-red); /* Adds a glowing effect */
+    box-shadow: 0 0 10px var(--mars-red); /* Adds a subtle shadow */
+    line-height: 120px; /* Centers the text vertically */
+    animation: blink 3s ease-in-out infinite;
+    border: none;
+}
+
+.circle:hover {
+    transform: scale(1.1);
+}
+
+.circle:active {
+    transform: scale(0.9);
+  }
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}

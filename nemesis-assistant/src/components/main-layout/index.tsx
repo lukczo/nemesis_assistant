@@ -2,9 +2,9 @@ import { ReactNode } from "react";
 import cls from "./index.module.css";
 
 interface MainLayoutProps {
-  top: ReactNode;
+  top?: ReactNode;
   main: ReactNode;
-  bottom: ReactNode;
+  bottom?: ReactNode;
 }
 
 export const MainLayout = (p: MainLayoutProps) => {
@@ -13,6 +13,7 @@ export const MainLayout = (p: MainLayoutProps) => {
       <div className={cls["top"]}>{p.top}</div>
       <div className={cls["main"]}>{p.main}</div>
       <div className={cls["bottom"]}>{p.bottom}</div>
+      <div className={cls.overlay} />
     </div>
   );
 };

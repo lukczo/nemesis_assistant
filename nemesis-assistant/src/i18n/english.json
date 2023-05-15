@@ -3,5 +3,12 @@
   "test_page": "this is a test page",
   "change_language": "Change language",
   "play": "Play",
-  "home": "Home"
+  "home": "Home",
+  "setup": {
+    "step1": "Board on the table.",
+    "step2": "Room tiles on the board.",
+    "step3": "Exploration tokens on the tiles.",
+    "step4": "Main gate, rover, and elevator tokens on the board.",
+    "step5": "Power sources on the board and elevator token.",
+    "step6": "SWC tokens, place them on the fields below the time track."}
 }

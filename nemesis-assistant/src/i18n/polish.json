@@ -3,5 +3,13 @@
   "test_page": "To strona testowa",
   "change_language": "Zmień język",
   "play": "Zagraj",
-  "home": "Strona startowa"
+  "home": "Strona startowa",
+  "setup": {
+    "step1": "Plansza na stole.",
+    "step2": "Kafelki pomieszczeń na planszy.",
+    "step3": "Żetony eksploracji na kafelkach",
+    "step4": "żetony bramy głównej, łazika i windy na planszy.",
+    "step5": "Zasilania na planszy i żetonie windy",
+    "step6": "Żetony SWC, połóż je na polach pod torem czasu"
+  }
 }

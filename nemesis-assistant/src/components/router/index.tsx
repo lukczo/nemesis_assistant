@@ -1,6 +1,5 @@
 import App from "../app/App.tsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { TestPage } from "../pages/test/";
 import { HomePage } from "../pages/home/";
 import { PlayPage } from "../pages/play/";
 
@@ -10,14 +9,10 @@ const router = createBrowserRouter([
     errorElement: <p>Error element</p>,
     path: "/*",
     children: [
-      { index: true, element: <HomePage /> },
+      { index: true, element: <PlayPage /> },
       {
-        path: "test",
-        element: <TestPage />,
-      },
-      {
-        path: "play",
-        element: <PlayPage />,
+        path: "home",
+        element: <HomePage />,
       },
     ],
   },

@@ -1,0 +1,12 @@
+.header {
+    color: var(--mars-red);
+    text-shadow: 0 0 10px var(--mars-red);
+    border-top: 3px solid var(--mars-red);
+    border-bottom: 3px solid var(--mars-red);
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    line-height: 1;
+    height: var(--font-size-xxxl);
+    font-size: var(--font-size-xxxl);
+}

@@ -11,13 +11,10 @@ export const Navigation = () => {
   return (
     <div className={cls.container}>
       <Button>
-        <Link to={"/"}>{t("home")}</Link>
+        <Link to={"/home"}>{t("home")}</Link>
       </Button>
       <Button>
-        <Link to={"test"}>Test</Link>
-      </Button>
-      <Button>
-        <Link to={"play"}>{t("play")}</Link>
+        <Link to={"/"}>{t("play")}</Link>
       </Button>
       <Button
         onClick={() =>
