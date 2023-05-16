@@ -164,6 +164,7 @@ p {
   --alien-green: #00FF00;
   --futuristic-silver: #C0C0C0;
   --background-color: #242424;
+  --error-color: rgba(255,0,0);
 
   --font-size-xxxl: 4rem;
   --font-size-xxl: 2rem;
@@ -173,4 +174,5 @@ p {
   --font-size-s: 1rem;
   --font-size-xs: 0.75rem
 }
+
 

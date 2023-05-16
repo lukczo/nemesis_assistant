@@ -12,7 +12,7 @@
   border: 0 var(--futuristic-silver) solid;
   border-radius: 5px;
 
-  color: var(--futuristic-silver);
+  color: var(--error-color);
   line-height: 1;
 
   padding: 0 5px 3px 5px;
@@ -20,12 +20,20 @@
   letter-spacing: 2px;
   font-size: var(--font-size-s);
 
-  animation-name: buttonhoverafter;
+  animation-name: glitch;
   animation-duration: 3s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 
   cursor: pointer;
+}
+
+.listed-item::after {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: var(--font-size-s);
+  animation: blink 1s infinite;
 }
 
 .list > span:hover li {
@@ -44,6 +52,17 @@
 .checked {
   border-width: 2px;
   animation: none;
+  color: var(--futuristic-silver);
+  background: linear-gradient(
+    0deg,
+    rgba(45, 255, 12, 0.1) 0%,
+    rgba(50, 77, 46, 0.15) 100%
+  );
+}
+
+.listed-item.checked::after {
+  display: none;
+  content: "";
 }
 
 .list {
@@ -53,56 +72,73 @@
 }
 
 
+/* ANIMATIONS */
 
-@keyframes buttonhoverafter {
-    0% {
-      right: 45px;
-    }
-  
-    10% {
-      right: 45px;
-    }
-    11% {
-      right: 35px;
-    }
-    20% {
-      transform: skew(0deg);
-    }
-    21% {
-      transform: skew(-10deg);
-    }
-    40% {
-      transform: skew(-10deg);
-    }
-    41% {
-      transform: skew(0deg);
-    }
-    49% {
-      right: 35px;
-    }
-    50% {
-      right: 55px;
-    }
-  
-    60% {
-      right: 55px;
-    }
-    61% {
-      right: 35px;
-    }
-    70% {
-      transform: skew(0deg);
-    }
-    71% {
-      transform: skew(10deg);
-    }
-    80% {
-      transform: skew(10deg);
-    }
-    81% {
-      transform: skew(0deg);
-    }
-    100% {
-      right: 35px;
-    }
+@keyframes blink {
+  0% {
+    background-color: transparent;
   }
+  50% {
+    background-color: transparent;
+  }
+  51% {
+    background-color: var(--error-color);
+  }
+  100% {
+    background-color: var(--error-color);
+  }
+}
+
+@keyframes glitch {
+  0% {
+    right: 45px;
+  }
+
+  10% {
+    right: 45px;
+  }
+  11% {
+    right: 35px;
+  }
+  20% {
+    transform: skew(0deg);
+  }
+  21% {
+    transform: skew(-10deg);
+  }
+  40% {
+    transform: skew(-10deg);
+  }
+  41% {
+    transform: skew(0deg);
+  }
+  49% {
+    right: 35px;
+  }
+  50% {
+    right: 55px;
+  }
+
+  60% {
+    right: 55px;
+  }
+  61% {
+    right: 35px;
+  }
+  70% {
+    transform: skew(0deg);
+  }
+  71% {
+    transform: skew(10deg);
+  }
+  80% {
+    transform: skew(10deg);
+  }
+  81% {
+    transform: skew(0deg);
+  }
+  100% {
+    right: 35px;
+  }
+}
+
