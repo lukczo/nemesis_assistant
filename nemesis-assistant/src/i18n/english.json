@@ -4,11 +4,21 @@
   "change_language": "Change language",
   "play": "Play",
   "home": "Home",
-  "setup": {
+  "next": "Next",
+  "back": "Back",
+  "setup_map": {
     "step1": "Board on the table.",
     "step2": "Room tiles on the board.",
     "step3": "Exploration tokens on the tiles.",
     "step4": "Main gate, rover, and elevator tokens on the board.",
     "step5": "Power sources on the board and elevator token.",
-    "step6": "SWC tokens, place them on the fields below the time track."}
+    "step6": "SWC tokens, place them on the fields below the time track."
+  },
+  "setup_players": {
+    "title": "SETUP02",
+    "step1": "Deal 2 objectives to each player.",
+    "step2": "Distribute hidden emergency plan tokens to the players.",
+    "step3": "Place the mandatory emergency plan token.",
+    "step4": "Pick characters."
+  }
 }

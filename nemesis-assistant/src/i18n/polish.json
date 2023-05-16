@@ -4,12 +4,22 @@
   "change_language": "Zmień język",
   "play": "Zagraj",
   "home": "Strona startowa",
-  "setup": {
+  "next": "Dalej",
+  "back": "Wróć",
+  "setup_map": {
+    "title": "SETUP01",
     "step1": "Plansza na stole.",
     "step2": "Kafelki pomieszczeń na planszy.",
     "step3": "Żetony eksploracji na kafelkach",
     "step4": "żetony bramy głównej, łazika i windy na planszy.",
     "step5": "Zasilania na planszy i żetonie windy",
     "step6": "Żetony SWC, połóż je na polach pod torem czasu"
+  },
+  "setup_players": {
+    "title": "SETUP02",
+    "step1": "Rozdaj po 2 cele graczom",
+    "step2": "Rozdaj graczom zakryte żetony planów awaryjnych.",
+    "step3": "Połóż obowiązujący żeton planu awaryjnego",
+    "step4": "Wybierz postaci"
   }
 }

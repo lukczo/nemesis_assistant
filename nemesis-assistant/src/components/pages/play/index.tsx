@@ -5,6 +5,9 @@ import { useGlobalState } from "../../../global-state";
 import { Link } from "react-router-dom";
 import { Button } from "../../button";
 import { Header } from "../../typography/header";
+import { List } from "../../typography/list-item";
+import { Controls } from "../../controls";
+import { useState } from "react";
 
 const StartPage = () => {
   const [, setGameStage] = useGlobalState("gameStage");
@@ -34,23 +37,71 @@ const StartPage = () => {
 const SetupMapPage = () => {
   const [, setGameStage] = useGlobalState("gameStage");
   const { t } = useTranslation();
+  const [isAllChecked, setIsAllChecked] = useState(false);
   return (
     <MainLayout
-      top={<Header>Setup 1</Header>}
+      top={<Header>Setup 01</Header>}
       main={
-        <ul>
-          <li>{t("setup.step1")}</li>
-          <li>{t("setup.step2")}</li>
-          <li>{t("setup.step3")}</li>
-          <li>{t("setup.step4")}</li>
-          <li>{t("setup.step5")}</li>
-          <li>{t("setup.step6")}</li>
-        </ul>
+        <List
+          onAllChecked={setIsAllChecked}
+          items={[
+            t("setup_map.step1"),
+            t("setup_map.step2"),
+            t("setup_map.step3"),
+            t("setup_map.step4"),
+            t("setup_map.step5"),
+            t("setup_map.step6"),
+          ]}
+        />
       }
       bottom={
-        <Button onClick={() => setGameStage("start")}>
-          <Link to={"/"}>{t("home")}</Link>
-        </Button>
+        <Controls>
+          <Button onClick={() => setGameStage("start")}>
+            <Link to={"/"}>{t("home")}</Link>
+          </Button>
+          <Button
+            disabled={!isAllChecked}
+            onClick={() => setGameStage("board-setup-players")}
+          >
+            next
+          </Button>
+        </Controls>
+      }
+    />
+  );
+};
+
+const SetupPlayerPage = () => {
+  const [, setGameStage] = useGlobalState("gameStage");
+  const { t } = useTranslation();
+  const [isAllChecked, setIsAllChecked] = useState(false);
+
+  return (
+    <MainLayout
+      top={<Header>Setup 02</Header>}
+      main={
+        <List
+          onAllChecked={setIsAllChecked}
+          items={[
+            t("setup_players.step1"),
+            t("setup_players.step2"),
+            t("setup_players.step3"),
+            t("setup_players.step4"),
+          ]}
+        />
+      }
+      bottom={
+        <Controls>
+          <Button onClick={() => setGameStage("board-setup-map")}>
+            {t("back")}
+          </Button>
+          <Button
+            disabled={!isAllChecked}
+            onClick={() => setGameStage("board-setup-players")}
+          >
+            {t("next")}
+          </Button>
+        </Controls>
       }
     />
   );
@@ -64,6 +115,8 @@ export const PlayPage = () => {
       return <StartPage />;
     case "board-setup-map":
       return <SetupMapPage />;
+    case "board-setup-players":
+      return <SetupPlayerPage />;
     default:
       return <StartPage />;
   }
