@@ -1,8 +1,8 @@
 import { ComponentProps } from "react";
 import cls from "./index.module.css";
 
-type HeaderProps = ComponentProps<"h1">;
+type TitleProps = ComponentProps<"h1">;
 
-export const Header = (p: HeaderProps) => {
+export const Title = (p: TitleProps) => {
   return <h1 className={cls.header}>{p.children}</h1>;
 };

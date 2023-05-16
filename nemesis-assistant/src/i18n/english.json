@@ -20,5 +20,9 @@
     "step2": "Distribute hidden emergency plan tokens to the players.",
     "step3": "Place the mandatory emergency plan token.",
     "step4": "Pick characters."
-  }
+  },
+  "add_players": {
+    "title": "Players"
+  },
+  "enter_player_name": "Enter players name"
 }

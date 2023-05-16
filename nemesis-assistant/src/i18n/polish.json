@@ -21,5 +21,9 @@
     "step2": "Rozdaj graczom zakryte żetony planów awaryjnych.",
     "step3": "Połóż obowiązujący żeton planu awaryjnego",
     "step4": "Wybierz postaci"
-  }
+  },
+  "add_players": {
+    "title": "Gracze"
+  },
+  "enter_player_name": "Wprowadź imię gracza"
 }
