@@ -72,7 +72,7 @@ export const CharacterSelect = (p: CharacterSelectProps) => {
   );
 };
 
-export const CharacterSelection = (p: CharacterSelectProps) => {
+export const CharacterSelection = () => {
   const [players] = useGlobalState("players");
 
   return (

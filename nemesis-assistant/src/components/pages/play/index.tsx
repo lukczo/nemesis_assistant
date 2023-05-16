@@ -109,7 +109,7 @@ const Setup02 = () => {
 const AddPlayers = () => {
   const [, setGameStage] = useGlobalState("gameStage");
   const { t } = useTranslation();
-  const [isAllChecked, setIsAllChecked] = useState(false);
+  const [isAllChecked] = useState(false);
 
   return (
     <MainLayout
