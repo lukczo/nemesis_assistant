@@ -1,4 +1,9 @@
-import { CharacterClasses, Player, useGlobalState } from "../../global-state";
+import {
+  CharacterClasses,
+  Player,
+  PlayersSelection,
+  useGlobalState,
+} from "../../global-state";
 import { FormEvent, useMemo, useState } from "react";
 import cls from "./index.module.css";
 import { useTranslation } from "react-i18next";
@@ -23,9 +28,9 @@ export const CharacterSelect = (p: CharacterSelectProps) => {
   const [players, setPlayers] = useGlobalState("players");
   const [availableCharacters] = useGlobalState("availableCharacters");
   const [newName, setNewName] = useState("");
-  const [selectedChar, setSelectedChar] = useState<CharacterClasses>(
-    p.player.character
-  );
+  const [selectedChar, setSelectedChar] = useState<
+    CharacterClasses | undefined
+  >(p.player.character);
 
   const playerModified = useMemo(() => {
     return { ...p.player, name: newName, character: selectedChar };
@@ -33,18 +38,17 @@ export const CharacterSelect = (p: CharacterSelectProps) => {
 
   const handleAddPlayer = (e: FormEvent) => {
     e.preventDefault();
-    setTimeout(() => {
-      const currentPlayers: [
-        Player | undefined,
-        Player | undefined,
-        Player | undefined,
-        Player | undefined,
-        Player | undefined
-      ] = [...players];
-      currentPlayers[p.player.id] = playerModified;
 
-      setPlayers(currentPlayers);
-    }, 600);
+    const currentPlayers: PlayersSelection = [...players];
+    currentPlayers[p.player.id] = playerModified;
+
+    setPlayers(currentPlayers);
+  };
+
+  const isCharacterTaken = (character: CharacterClasses) => {
+    return Object.values(players)
+      .map((player) => player?.character)
+      .includes(character);
   };
 
   return (
@@ -57,13 +61,19 @@ export const CharacterSelect = (p: CharacterSelectProps) => {
             placeholder={t("enter_player_name") || undefined}
             onBlur={handleAddPlayer}
           />
-          <select
-            onChange={(ev) => {
-              setSelectedChar(ev.target.value as CharacterClasses);
-            }}
-          >
+          <select defaultValue={selectedChar}>
             {availableCharacters.map((char) => {
-              return <option key={char}>{char}</option>;
+              return (
+                <option
+                  onChange={(ev) => {
+                    setSelectedChar(ev.currentTarget.value as CharacterClasses);
+                  }}
+                  disabled={isCharacterTaken(char)}
+                  key={char}
+                >
+                  {char}
+                </option>
+              );
             })}
           </select>
         </label>

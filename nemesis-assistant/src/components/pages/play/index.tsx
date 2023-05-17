@@ -108,8 +108,8 @@ const Setup02 = () => {
 
 const AddPlayers = () => {
   const [, setGameStage] = useGlobalState("gameStage");
+  const [players] = useGlobalState("players");
   const { t } = useTranslation();
-  const [isAllChecked] = useState(false);
 
   return (
     <MainLayout
@@ -119,8 +119,8 @@ const AddPlayers = () => {
         <Controls>
           <Button onClick={() => setGameStage("setup02")}>{t("back")}</Button>
           <Button
-            disabled={!isAllChecked}
-            onClick={() => setGameStage("setup02")}
+            disabled={!players[0] || !players[1]}
+            onClick={() => setGameStage("add-players")}
           >
             {t("next")}
           </Button>

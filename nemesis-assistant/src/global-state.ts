@@ -3,15 +3,17 @@ import { createGlobalState } from "react-hooks-global-state";
 export type GlobalState = {
   language: "polish" | "english";
   gameStage: GameStage;
-  players: [
-    Player | undefined,
-    Player | undefined,
-    Player | undefined,
-    Player | undefined,
-    Player | undefined
-  ];
+  players: PlayersSelection;
   availableCharacters: CharacterClasses[];
 };
+
+export type PlayersSelection = [
+  Player | undefined,
+  Player | undefined,
+  Player | undefined,
+  Player | undefined,
+  Player | undefined
+];
 
 export type CharacterClasses =
   | "survivor"
@@ -22,8 +24,8 @@ export type CharacterClasses =
 
 export type Player = {
   id: number;
-  name: string;
-  character: CharacterClasses;
+  name?: string;
+  character?: CharacterClasses;
   knowledge: number;
 };
 
