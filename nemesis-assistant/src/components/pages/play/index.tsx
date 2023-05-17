@@ -9,6 +9,7 @@ import { List } from "../../list";
 import { Controls } from "../../controls";
 import { useState } from "react";
 import { CharacterSelection } from "../../character-select";
+import { PlayersStage } from "../../players-stage";
 
 const StartPage = () => {
   const [, setGameStage] = useGlobalState("gameStage");
@@ -120,6 +121,30 @@ const AddPlayers = () => {
           <Button onClick={() => setGameStage("setup02")}>{t("back")}</Button>
           <Button
             disabled={!players[0] || !players[1]}
+            onClick={() => setGameStage("players-stage")}
+          >
+            {t("next")}
+          </Button>
+        </Controls>
+      }
+    />
+  );
+};
+
+const PlayersStagePage = () => {
+  const [, setGameStage] = useGlobalState("gameStage");
+  const [players] = useGlobalState("players");
+  const { t } = useTranslation();
+
+  return (
+    <MainLayout
+      top={<Title>{t("players_stage.title")}</Title>}
+      main={<PlayersStage />}
+      bottom={
+        <Controls>
+          <Button onClick={() => setGameStage("setup02")}>{t("back")}</Button>
+          <Button
+            disabled={!players[0] || !players[1]}
             onClick={() => setGameStage("add-players")}
           >
             {t("next")}
@@ -142,6 +167,8 @@ export const PlayPage = () => {
       return <Setup02 />;
     case "add-players":
       return <AddPlayers />;
+    case "players-stage":
+      return <PlayersStagePage />;
     default:
       return <StartPage />;
   }

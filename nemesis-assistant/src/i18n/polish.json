@@ -25,5 +25,8 @@
   "add_players": {
     "title": "Gracze"
   },
+  "players_stage": {
+    "title": "Faza Graczy"
+  },
   "enter_player_name": "Wprowadź imię gracza"
 }

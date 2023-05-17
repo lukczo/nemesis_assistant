@@ -1,12 +1,8 @@
-import {
-  CharacterClasses,
-  Player,
-  PlayersSelection,
-  useGlobalState,
-} from "../../global-state";
+import { useGlobalState } from "../../global-state";
 import { FormEvent, useMemo, useState } from "react";
 import cls from "./index.module.css";
 import { useTranslation } from "react-i18next";
+import { CharacterClasses, Player, PlayersSelection } from "../../shared-types";
 
 let player1: Player = { id: 0, character: "survivor", knowledge: 3, name: "" };
 let player2: Player = {
