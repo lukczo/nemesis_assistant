@@ -3,6 +3,7 @@ import { FormEvent, useMemo, useState } from "react";
 import cls from "./index.module.css";
 import { useTranslation } from "react-i18next";
 import { CharacterClasses, Player, PlayersSelection } from "../../shared-types";
+import clsx from "clsx";
 
 let player1: Player = { id: 0, character: "survivor", knowledge: 3, name: "" };
 let player2: Player = {
@@ -38,7 +39,9 @@ export const CharacterSelect = (p: CharacterSelectProps) => {
     const currentPlayers: PlayersSelection = [...players];
     currentPlayers[p.player.id] = playerModified;
 
-    setPlayers(currentPlayers);
+    setTimeout(() => {
+      setPlayers(currentPlayers);
+    }, 600);
   };
 
   const isCharacterTaken = (character: CharacterClasses) => {
@@ -47,34 +50,44 @@ export const CharacterSelect = (p: CharacterSelectProps) => {
       .includes(character);
   };
 
+  const characterSpecificClass = useMemo(() => {
+    return selectedChar ? cls[selectedChar] : undefined;
+  }, [selectedChar, setSelectedChar]);
+
   return (
-    <div>
-      <form onSubmit={handleAddPlayer}>
-        <label>
-          <input
-            type="text"
-            onChange={(ev) => setNewName(ev.currentTarget.value)}
-            placeholder={t("enter_player_name") || undefined}
-            onBlur={handleAddPlayer}
-          />
-          <select defaultValue={selectedChar}>
-            {availableCharacters.map((char) => {
-              return (
-                <option
-                  onChange={(ev) => {
-                    setSelectedChar(ev.currentTarget.value as CharacterClasses);
-                  }}
-                  disabled={isCharacterTaken(char)}
-                  key={char}
-                >
-                  {char}
-                </option>
-              );
-            })}
-          </select>
-        </label>
-      </form>
-    </div>
+    <form
+      onSubmit={handleAddPlayer}
+      className={clsx([
+        cls["character-tile"],
+        selectedChar && characterSpecificClass,
+      ])}
+    >
+      <label>
+        <input
+          className={cls.input}
+          type="text"
+          onChange={(ev) => setNewName(ev.currentTarget.value)}
+          placeholder={t("enter_player_name") || undefined}
+          onBlur={handleAddPlayer}
+        />
+        <span className={cls.separator} />
+      </label>
+      <select defaultValue={selectedChar} className={cls.select}>
+        {availableCharacters.map((char) => {
+          return (
+            <option
+              onChange={(ev) => {
+                setSelectedChar(ev.currentTarget.value as CharacterClasses);
+              }}
+              disabled={isCharacterTaken(char)}
+              key={char}
+            >
+              {char}
+            </option>
+          );
+        })}
+      </select>
+    </form>
   );
 };
 

@@ -1,7 +1,7 @@
 /* Cool sci-fi font like from Aliens */
 @font-face {
-  font-family: 'Eurostile';
-  src: url('/src/assets/fonts/eurostile.woff') format('woff');
+  font-family: "Eurostile";
+  src: url("/src/assets/fonts/eurostile.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -132,7 +132,7 @@ img {
 
 /* Remove user agent stylesheet */
 body {
-  font-family: 'Eurostile', Helvetica, Arial, sans-serif;
+  font-family: "Eurostile", Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-size: var(--font-size-m);
   background-color: var(--background-color);
@@ -158,13 +158,15 @@ p {
 }
 
 :root {
-  --mars-red: #FF5733;
-  --space-blue: #0A7FD9;
+  --mars-red: #ff5733;
+  --space-blue: #0a7fd9;
   --xenomorph-black: #000000;
-  --alien-green: #00FF00;
-  --futuristic-silver: #C0C0C0;
+  --alien-green: #00ff00;
+  --futuristic-silver: #c0c0c0;
   --background-color: #242424;
-  --error-color: rgba(255,0,0);
+  --error-color: rgba(255, 0, 0);
+  --galaxy-white: #ffffff;
+  --rabbit-purple: purple;
 
   --font-size-xxxl: 4rem;
   --font-size-xxl: 2rem;
@@ -172,7 +174,5 @@ p {
   --font-size-l: 1.5rem;
   --font-size-m: 1.25rem;
   --font-size-s: 1rem;
-  --font-size-xs: 0.75rem
+  --font-size-xs: 0.75rem;
 }
-
-

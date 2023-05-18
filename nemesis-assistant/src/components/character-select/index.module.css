@@ -1,6 +1,132 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: start;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.character-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  background: linear-gradient(
+    0deg,
+    rgba(255, 87, 51, 0.1) 0%,
+    rgba(17, 17, 17, 0) 100%
+  );
+  padding: 10px;
+  height: 200px;
+  width: 300px;
+  border-radius: 0.25rem;
+  max-width: 550px;
+}
+.character-tile > * {
+  width: 100%;
+}
+
+.input {
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  color: var(--galaxy-white);
+}
+
+.input::placeholder {
+  color: var(--galaxy-white);
+}
+
+.input:focus {
+  animation: blink 2s infinite;
+}
+
+.separator::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 8px;
+  background-color: var(--galaxy-white);
+  clip-path: polygon(
+    0px 0px,
+    85px 0px,
+    90px 5px,
+    100% 5px,
+    100% 6px,
+    85px 6px,
+    80px 8px,
+    0px 8px
+  );
+}
+
+.select {
+  height: 100%;
+  background-color: transparent;
+  border: 2px dashed var(--galaxy-white);
+  color: var(--galaxy-white);
+}
+
+.select option {
+  color: black;
+}
+
+/* CLASSES COLORS */
+
+.survivor .select {
+  border-color: var(--error-color);
+}
+.survivor .separator::before {
+  background-color: var(--error-color);
+}
+.watchman .select {
+  border-color: var(--space-blue);
+}
+.watchman .separator::before {
+  background-color: var(--space-blue);
+}
+.astrobiologist .select {
+  border-color: var(--futuristic-silver);
+}
+.astrobiologist .separator::before {
+  background-color: var(--futuristic-silver);
+}
+.cleaner .select {
+  border-color: var(--mars-red);
+}
+.cleaner .separator::before {
+  background-color: var(--mars-red);
+}
+.rabbit .select {
+  border-color: var(--rabbit-purple);
+}
+.rabbit .separator::before {
+  background-color: var(--rabbit-purple);
+}
+.hacker .select {
+  border-color: var(--alien-green);
+}
+.hacker .separator::before {
+  background-color: var(--alien-green);
+}
+
+@keyframes blink {
+  0% {
+    color: transparent;
+  }
+  50% {
+    color: transparent;
+  }
+  51% {
+    color: var(--galaxy-white);
+  }
+  100% {
+    color: var(--galaxy-white);
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .character-tile {
+    width: 250px;
+  }
 }
