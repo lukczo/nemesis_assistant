@@ -51,17 +51,17 @@ export const CharacterSelect = (p: CharacterSelectProps) => {
   };
 
   const characterSpecificClass = useMemo(() => {
-    return selectedChar ? cls[selectedChar] : undefined;
+    return clsx(cls["character-tile"], {
+      [cls.survivor]: selectedChar === "survivor",
+      [cls.astrobiologist]: selectedChar === "astrobiologist",
+      [cls.cleaner]: selectedChar === "cleaner",
+      [cls.rabbit]: selectedChar === "rabbit",
+      [cls.watchman]: selectedChar === "watchman",
+    });
   }, [selectedChar, setSelectedChar]);
 
   return (
-    <form
-      onSubmit={handleAddPlayer}
-      className={clsx([
-        cls["character-tile"],
-        selectedChar && characterSpecificClass,
-      ])}
-    >
+    <form onSubmit={handleAddPlayer} className={characterSpecificClass}>
       <label>
         <input
           className={cls.input}
@@ -72,16 +72,16 @@ export const CharacterSelect = (p: CharacterSelectProps) => {
         />
         <span className={cls.separator} />
       </label>
-      <select defaultValue={selectedChar} className={cls.select}>
+      <select
+        defaultValue={selectedChar}
+        className={cls.select}
+        onChange={(ev) => {
+          setSelectedChar(ev.currentTarget.value as CharacterClasses);
+        }}
+      >
         {availableCharacters.map((char) => {
           return (
-            <option
-              onChange={(ev) => {
-                setSelectedChar(ev.currentTarget.value as CharacterClasses);
-              }}
-              disabled={isCharacterTaken(char)}
-              key={char}
-            >
+            <option disabled={isCharacterTaken(char)} key={char}>
               {char}
             </option>
           );

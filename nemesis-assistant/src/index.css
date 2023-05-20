@@ -164,7 +164,8 @@ p {
   --alien-green: #00ff00;
   --futuristic-silver: #c0c0c0;
   --background-color: #242424;
-  --error-color: rgba(255, 0, 0);
+  --error-color: #ff0000;
+  --survivor-red: #8b0000;
   --galaxy-white: #ffffff;
   --rabbit-purple: purple;
   --warning-yellow: #f9c22e;

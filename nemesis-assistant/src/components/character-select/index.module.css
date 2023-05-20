@@ -32,10 +32,13 @@
   border: none;
   background-color: transparent;
   color: var(--galaxy-white);
+  letter-spacing: 2px;
 }
 
 .input::placeholder {
-  color: var(--galaxy-white);
+  color: var(--futuristic-silver);
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
 }
 
 .input:focus {
@@ -74,10 +77,10 @@
 /* CLASSES COLORS */
 
 .survivor .select {
-  border-color: var(--error-color);
+  border-color: var(--survivor-red);
 }
 .survivor .separator::before {
-  background-color: var(--error-color);
+  background-color: var(--survivor-red);
 }
 .watchman .select {
   border-color: var(--space-blue);
@@ -108,21 +111,6 @@
 }
 .hacker .separator::before {
   background-color: var(--alien-green);
-}
-
-@keyframes blink {
-  0% {
-    color: transparent;
-  }
-  50% {
-    color: transparent;
-  }
-  51% {
-    color: var(--galaxy-white);
-  }
-  100% {
-    color: var(--galaxy-white);
-  }
 }
 
 @media only screen and (max-width: 767px) {
