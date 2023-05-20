@@ -44,12 +44,6 @@ export const CharacterSelect = (p: CharacterSelectProps) => {
     }, 600);
   };
 
-  const isCharacterTaken = (character: CharacterClasses) => {
-    return Object.values(players)
-      .map((player) => player?.character)
-      .includes(character);
-  };
-
   const characterSpecificClass = useMemo(() => {
     return clsx(cls["character-tile"], {
       [cls.survivor]: selectedChar === "survivor",
@@ -80,11 +74,7 @@ export const CharacterSelect = (p: CharacterSelectProps) => {
         }}
       >
         {availableCharacters.map((char) => {
-          return (
-            <option disabled={isCharacterTaken(char)} key={char}>
-              {char}
-            </option>
-          );
+          return <option key={char}>{char}</option>;
         })}
       </select>
     </form>
