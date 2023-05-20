@@ -28,17 +28,26 @@
   cursor: pointer;
 }
 
-.listed-item::after {
+.listed-item::before {
   content: "";
-  display: inline-block;
+  display: block;
   width: 10px;
+  margin-right: 10px;
   height: var(--font-size-s);
   animation: blink 1s infinite;
+  font-size: var(--font-size-s);
+  color: transparent;
+}
+
+.list > span {
+  width: 100%;
+  padding: 0 1.5rem;
 }
 
 .list > span:hover li {
   color: #ffffff;
 }
+
 .list span:hover {
   transform: scale(1.1);
 }
@@ -58,14 +67,15 @@
   );
 }
 
-.listed-item.checked::after {
+.listed-item.checked::before {
   display: none;
-  content: "";
+  content: "_";
 }
 
 .list {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 15px 0;
 }
 
