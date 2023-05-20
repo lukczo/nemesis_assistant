@@ -6,7 +6,7 @@
   height: 100%;
   width: 100%;
   grid: 2rem 0;
-  padding: 2.5rem;
+  padding: 2.5rem 1.5rem;
 
   background-image: url("../../assets/background/start.jpg");
   background-size: cover;
@@ -58,6 +58,7 @@
 
 .main > * {
   height: 100%;
+  width: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
   justify-content: center;
