@@ -11,6 +11,14 @@
   font-size: var(--font-size-xxxl);
 }
 
+.header.secondary {
+  color: var(--warning-yellow);
+  text-shadow: 0 0 10px var(--warning-yellow);
+  border: none;
+  height: var(--font-size-l);
+  font-size: var(--font-size-l);
+}
+
 @media only screen and (max-width: 500px) {
   .header {
     height: var(--font-size-xl);

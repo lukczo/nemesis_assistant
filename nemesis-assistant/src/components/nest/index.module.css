@@ -1,3 +1,16 @@
 .container {
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
+  background-image: url("../../assets/background/encounter.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 25%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border: 2px dashed var(--warning-yellow);
+}
+
+.stalker-holder {
+  padding: 1.5rem;
+  width: 75%;
 }

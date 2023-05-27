@@ -13,6 +13,7 @@ export type GlobalState = {
   players: PlayersSelection;
   availableCharacters: CharacterClasses[];
   bag: NightStalkerPool;
+  unleashedStalkers: NightStalkerPool;
 };
 
 const initialState: GlobalState = {
@@ -38,6 +39,7 @@ const initialState: GlobalState = {
     NIGHT_STALKERS_BREEDS.queen,
     null,
   ],
+  unleashedStalkers: [],
 };
 
 export const { useGlobalState } = createGlobalState(initialState);

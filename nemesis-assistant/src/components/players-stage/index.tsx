@@ -6,6 +6,7 @@ import { useGlobalState } from "../../global-state";
 import clsx from "clsx";
 import { Nest } from "../nest";
 import { useTranslation } from "react-i18next";
+import { Title } from "../title";
 
 export const PlayersStage = () => {
   const [players] = useGlobalState("players");
@@ -52,7 +53,7 @@ export const Tile = (p: TileProps) => {
       ])}
     >
       <div>
-        <h2>{p.header}</h2>
+        <Title secondary>{p.header}</Title>
       </div>
       {p.children}
     </div>

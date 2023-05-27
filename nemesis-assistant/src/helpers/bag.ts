@@ -16,6 +16,8 @@ const substractFromBag = (
 
 export const useDrawFromBag = (substractFromPool: boolean) => {
   const [bag, setBag] = useGlobalState("bag");
+  const [unleashedStalkers, setUnleashedStalkers] =
+    useGlobalState("unleashedStalkers");
   const [drawnStalker, setDrawnStalker] = useState<NightStalker | null>(null);
 
   return useCallback(() => {
@@ -30,6 +32,7 @@ export const useDrawFromBag = (substractFromPool: boolean) => {
 
     if (substractFromPool && randomNightStalker !== null) {
       setBag(substractFromBag(bag, randomNightStalker));
+      setUnleashedStalkers([...unleashedStalkers, randomNightStalker]);
     }
 
     setDrawnStalker(randomNightStalker);
@@ -46,5 +49,28 @@ export const useAddToBag = () => {
       setBag([...bag, stalker]);
     },
     [bag]
+  );
+};
+
+export const useKillStalker = () => {
+  const [unleashedStalkers, setUnleashedStalkers] =
+    useGlobalState("unleashedStalkers");
+
+  return useCallback(
+    (stalkerToKill: NightStalker) => {
+      const unleashedStalkersCopy: NightStalkerPool = [...unleashedStalkers];
+
+      if (unleashedStalkers.length === 0) {
+        return null;
+      }
+
+      const stalkersUpdated = substractFromBag(
+        unleashedStalkersCopy,
+        stalkerToKill
+      );
+
+      setUnleashedStalkers(stalkersUpdated);
+    },
+    [unleashedStalkers]
   );
 };

@@ -26,7 +26,8 @@
   },
   "players_stage": {
     "title": "Players Stage",
-    "draw_stalker": "Draw Stalker"
+    "draw_stalker": "Draw Stalker",
+    "add_stalker": "Add stalker to bag"
   },
   "stalkers": {
     "nest": "Nest",

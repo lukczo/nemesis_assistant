@@ -27,7 +27,8 @@
   },
   "players_stage": {
     "title": "Faza Graczy",
-    "draw_stalker": "Losuj Nocnego Łowcę"
+    "draw_stalker": "Losuj Nocnego Łowcę",
+    "add_stalker": "Dodaj Nocnego Łowcę"
   },
   "stalkers": {
     "nest": "Gniazdo",

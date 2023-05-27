@@ -6,6 +6,7 @@ import { useState } from "react";
 import Spinner from "../spinner";
 import cls from "./index.module.css";
 import { useGlobalState } from "../../global-state";
+import { ListItem } from "../list";
 
 export const Nest = () => {
   const [bag] = useGlobalState("bag");
@@ -24,10 +25,15 @@ export const Nest = () => {
 
   return (
     <div className={cls.container}>
+      <p>Rozmiar gniazda: {bag.length - 1} </p>
       <div>{isLoading && <Spinner />}</div>
-      <div>{drawnStalker ? t("stalkers." + drawnStalker) : "-"}</div>
+      <div className={cls["stalker-holder"]}>
+        <ListItem checked={false}>
+          {!isLoading && drawnStalker ? t("stalkers." + drawnStalker) : "-"}
+        </ListItem>
+      </div>
       <Button
-        disabled={bag.length === 1 && !bag[0]}
+        disabled={(bag.length === 1 && !bag[0]) || isLoading}
         onClick={() => handleDrawStalker(drawFromBag())}
       >
         {t("players_stage.draw_stalker")}
