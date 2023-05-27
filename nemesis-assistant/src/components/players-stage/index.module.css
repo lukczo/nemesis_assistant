@@ -10,3 +10,11 @@
   color: var(--warning-yellow);
   overflow-y: auto;
 }
+
+.left-edge {
+  padding-left: 25%;
+}
+
+.right-edge {
+  padding-right: 25%;
+}

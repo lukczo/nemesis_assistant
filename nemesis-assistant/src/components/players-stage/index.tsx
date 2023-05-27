@@ -5,6 +5,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from "react-responsive-carousel";
 import cls from "./index.module.css";
 import { useGlobalState } from "../../global-state";
+import clsx from "clsx";
 
 // interface PlayersStageProps {}
 
@@ -17,13 +18,8 @@ export const PlayersStage = (/* p: PlayersStageProps */) => {
 
   return (
     <div style={{ overflowY: "hidden" }}>
-      <Carousel
-        centerMode
-        infiniteLoop
-        showStatus={false}
-        showIndicators={false}
-      >
-        <Tile header={"Main"}>
+      <Carousel centerMode showStatus={false} showIndicators={false}>
+        <Tile header={"Main"} leftEdge>
           {players.map((x) => {
             if (!x) return "";
             return (
@@ -49,7 +45,9 @@ export const PlayersStage = (/* p: PlayersStageProps */) => {
             </div>
           ))}
         </Tile>
-        <Tile header={"Laboratorium"}>lalal</Tile>
+        <Tile header={"Laboratorium"} rightEdge>
+          lalal
+        </Tile>
       </Carousel>
     </div>
   );
@@ -57,11 +55,20 @@ export const PlayersStage = (/* p: PlayersStageProps */) => {
 
 type TileProps = {
   header?: ReactNode;
+  leftEdge?: boolean;
+  rightEdge?: boolean;
 } & ComponentProps<"div">;
 
 export const Tile = (p: TileProps) => {
   return (
-    <div {...p} className={cls.tile}>
+    <div
+      {...p}
+      className={clsx([
+        cls.tile,
+        p.leftEdge && cls["left-edge"],
+        p.rightEdge && cls["right-edge"],
+      ])}
+    >
       <div>
         <h2>{p.header}</h2>
       </div>

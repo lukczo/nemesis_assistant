@@ -11,7 +11,13 @@
   font-size: var(--font-size-xxxl);
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 500px) {
+  .header {
+    height: var(--font-size-xl);
+    font-size: var(--font-size-xl);
+  }
+}
+@media only screen and (min-width: 501px) and (max-width: 900px) {
   .header {
     height: var(--font-size-xxl);
     font-size: var(--font-size-xxl);
