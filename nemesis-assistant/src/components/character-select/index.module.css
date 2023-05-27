@@ -7,6 +7,10 @@
   gap: 40px;
 }
 
+.blocked {
+  pointer-events: none;
+}
+
 .character-tile {
   display: flex;
   flex-direction: column;
