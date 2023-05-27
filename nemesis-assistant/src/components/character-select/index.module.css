@@ -122,4 +122,9 @@
   .character-tile {
     width: 250px;
   }
+  .container {
+    flex-direction: column;
+    justify-content: start;
+    flex-wrap: nowrap;
+  }
 }

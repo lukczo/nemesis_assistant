@@ -1,5 +1,5 @@
 import { useGlobalState } from "../../global-state";
-import { FormEvent, useMemo, useState } from "react";
+import { FormEvent, useMemo, useState, useEffect, useRef } from "react";
 import cls from "./index.module.css";
 import { useTranslation } from "react-i18next";
 import { CharacterClasses, Player, PlayersSelection } from "../../shared-types";
@@ -93,6 +93,16 @@ export const CharacterSelect = (p: CharacterSelectProps) => {
 export const CharacterSelection = () => {
   const [players] = useGlobalState("players");
 
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!containerRef.current) return;
+    containerRef.current.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+    });
+  }, [containerRef, players]);
+
   return (
     <div className={cls.container}>
       <CharacterSelect player={player1} />
@@ -100,6 +110,7 @@ export const CharacterSelection = () => {
       {players[1] && <CharacterSelect player={player3} />}
       {players[2] && <CharacterSelect player={player4} />}
       {players[3] && <CharacterSelect player={player5} />}
+      <div ref={containerRef} />
     </div>
   );
 };
