@@ -25,7 +25,16 @@
     "title": "Players"
   },
   "players_stage": {
-    "title": "Players Stage"
+    "title": "Players Stage",
+    "draw_stalker": "Draw Stalker"
+  },
+  "stalkers": {
+    "nest": "Nest",
+    "larva": "Larva",
+    "creeper": "Creeper",
+    "adult": "Adult Stalker",
+    "breeder": "Breeder",
+    "queen": "Queen"
   },
   "enter_player_name": "Enter players name"
 }

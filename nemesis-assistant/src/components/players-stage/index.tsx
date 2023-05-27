@@ -1,20 +1,15 @@
-import { useDrawFromBag } from "../../helpers/bag";
-import { NightStalker } from "../../shared-types";
-import { ComponentProps, ReactNode, useState } from "react";
+import { ComponentProps, ReactNode } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import cls from "./index.module.css";
 import { useGlobalState } from "../../global-state";
 import clsx from "clsx";
+import { Nest } from "../nest";
+import { useTranslation } from "react-i18next";
 
-// interface PlayersStageProps {}
-
-export const PlayersStage = (/* p: PlayersStageProps */) => {
-  const [drawnStalker, setDrawnStalker] = useState<NightStalker | null>(null);
+export const PlayersStage = () => {
   const [players] = useGlobalState("players");
-  const [bag] = useGlobalState("bag");
-
-  const drawFromBag = useDrawFromBag(true);
+  const { t } = useTranslation();
 
   return (
     <div style={{ overflowY: "hidden" }}>
@@ -29,21 +24,8 @@ export const PlayersStage = (/* p: PlayersStageProps */) => {
             );
           })}
         </Tile>
-        <Tile header={"Woreczek"}>
-          {drawnStalker === null ? "null" : drawnStalker}
-          <br />
-          <button onClick={() => setDrawnStalker(drawFromBag())}>
-            LOSUJ POTWORA
-          </button>
-          <br />
-          Monsters: {bag.length} <br />{" "}
-          {bag.map((stalker) => (
-            <div>
-              {stalker}
-              {stalker === null && "empty token"}
-              <br />
-            </div>
-          ))}
+        <Tile header={t("stalkers.nest")}>
+          <Nest />
         </Tile>
         <Tile header={"Laboratorium"} rightEdge>
           lalal

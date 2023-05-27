@@ -26,7 +26,16 @@
     "title": "Gracze"
   },
   "players_stage": {
-    "title": "Faza Graczy"
+    "title": "Faza Graczy",
+    "draw_stalker": "Losuj Nocnego Łowcę"
+  },
+  "stalkers": {
+    "nest": "Gniazdo",
+    "larva": "Larwa",
+    "creeper": "Pełzacz",
+    "adult": "Dorosły osobnik",
+    "breeder": "Reproduktor",
+    "queen": "Królowa"
   },
   "enter_player_name": "Wprowadź imię gracza"
 }
