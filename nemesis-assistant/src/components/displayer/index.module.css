@@ -21,6 +21,5 @@
   letter-spacing: 2px;
   font-size: var(--font-size-s);
 
-  min-height: 250px;
   height: 100%;
 }

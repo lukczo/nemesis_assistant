@@ -39,5 +39,15 @@
     "breeder": "Breeder",
     "queen": "Queen"
   },
+  "characters": {
+    "name": "Name",
+    "cleaner": "Cleaner",
+    "astrobiologist": "Astrobiologist",
+    "survivor": "Survivor",
+    "rabbit": "Rabbit",
+    "watchman": "Watcher",
+    "class": "Class",
+    "knowledge": "Knowledge"
+  },
   "enter_player_name": "Enter players name"
 }

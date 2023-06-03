@@ -1,0 +1,38 @@
+.container {
+  justify-content: space-around;
+  align-items: center;
+  background-image: url("../../assets/background/characters.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 25%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border: 2px dashed var(--warning-yellow);
+}
+
+.container > div {
+  padding: 1.5rem;
+  width: 75%;
+  flex: 1;
+}
+
+.paragraph {
+  color: var(--galaxy-white);
+  text-shadow: 0 0 50px var(--background-color);
+  display: block;
+  letter-spacing: -1px;
+  line-height: 1;
+  height: var(--font-size-s);
+  font-size: var(--font-size-s);
+}
+
+.summary {
+  justify-content: center;
+  text-align: start;
+  margin: 5px 0;
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
+.paragraph {
+  align-self: start;
+}

@@ -40,5 +40,15 @@
     "breeder": "Reproduktor",
     "queen": "Królowa"
   },
+  "characters": {
+    "name": "Imię",
+    "cleaner": "Sprzątacz",
+    "astrobiologist": "Astrobiolog",
+    "survivor": "Ocalała",
+    "rabbit": "Królik doświadczalny",
+    "watchman": "Stróż",
+    "class": "Klasa",
+    "knowledge": "Wiedza"
+  },
   "enter_player_name": "Wprowadź imię gracza"
 }

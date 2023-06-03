@@ -5,10 +5,10 @@ import clsx from "clsx";
 type DisplayerProps = ComponentProps<"div"> & {};
 
 export const Displayer = (p: DisplayerProps) => {
-  const { children } = p;
+  const { children, className } = p;
 
   return (
-    <div className={clsx([cls["displayer"]])} {...p}>
+    <div {...p} className={clsx([cls["displayer"], className])}>
       {children}
     </div>
   );
