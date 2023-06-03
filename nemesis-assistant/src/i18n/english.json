@@ -31,6 +31,8 @@
   },
   "stalkers": {
     "nest": "Nest",
+    "stalkers_in_nest": "Stalkers in nest",
+    "no_stalker": "No stalker",
     "larva": "Larva",
     "creeper": "Creeper",
     "adult": "Adult Stalker",

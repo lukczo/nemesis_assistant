@@ -13,4 +13,5 @@
 .stalker-holder {
   padding: 1.5rem;
   width: 75%;
+  flex: 1;
 }

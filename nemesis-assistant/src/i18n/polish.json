@@ -32,6 +32,8 @@
   },
   "stalkers": {
     "nest": "Gniazdo",
+    "stalkers_in_nest": "Łowcy w gnieździe",
+    "no_stalker": "Brak łowcy",
     "larva": "Larwa",
     "creeper": "Pełzacz",
     "adult": "Dorosły osobnik",
