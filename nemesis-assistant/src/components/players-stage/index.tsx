@@ -1,4 +1,4 @@
-import { ComponentProps, ReactNode } from "react";
+import { PropsWithChildren, ReactNode } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import cls from "./index.module.css";
@@ -13,7 +13,7 @@ export const PlayersStage = () => {
 
   return (
     <div style={{ overflowY: "hidden" }}>
-      <Carousel centerMode showStatus={false} showIndicators={false}>
+      <Carousel centerMode showStatus={false} showIndicators={false} showThumbs={false}>
         <Tile header={"Main"} leftEdge>
           <Dashboard />
         </Tile>
@@ -32,15 +32,15 @@ type TileProps = {
   header?: ReactNode;
   leftEdge?: boolean;
   rightEdge?: boolean;
-} & ComponentProps<"div">;
+} & PropsWithChildren;
 
 export const Tile = (p: TileProps) => {
+  const {leftEdge} = p
   return (
     <div
-      {...p}
       className={clsx([
         cls.tile,
-        p.leftEdge && cls["left-edge"],
+        leftEdge && cls["left-edge"],
         p.rightEdge && cls["right-edge"],
       ])}
     >

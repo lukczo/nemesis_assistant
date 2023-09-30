@@ -133,7 +133,6 @@ const AddPlayers = () => {
 
 const PlayersStagePage = () => {
   const [, setGameStage] = useGlobalState("gameStage");
-  const [players] = useGlobalState("players");
   const { t } = useTranslation();
 
   return (
@@ -142,12 +141,11 @@ const PlayersStagePage = () => {
       main={<PlayersStage />}
       bottom={
         <Controls>
-          <Button onClick={() => setGameStage("setup02")}>{t("back")}</Button>
           <Button
-            disabled={!players[0] || !players[1]}
-            onClick={() => setGameStage("add-players")}
+            disabled={true}
+            onClick={() => undefined}
           >
-            {t("next")}
+            {t("finish_round")}
           </Button>
         </Controls>
       }

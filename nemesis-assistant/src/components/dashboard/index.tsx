@@ -16,7 +16,7 @@ export const Dashboard = () => {
             if (!player) return;
 
             return (
-              <Displayer className={cls.summary}>
+              <Displayer className={cls.summary} key={player.id}>
                 <Paragraph>
                   {t("characters.name")}: {player.name}
                 </Paragraph>

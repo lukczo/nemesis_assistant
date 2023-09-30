@@ -61,7 +61,6 @@ export const CharacterSelect = (p: CharacterSelectProps) => {
     <>
       {isLoading && <Spinner />}
       <form
-        onSubmit={handleAddPlayer}
         className={clsx([characterSpecificClass, isLoading && cls.blocked])}
       >
         <label>
